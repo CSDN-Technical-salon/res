@@ -1,0 +1,29 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: api-res
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver             # mysqlÇý¶¯°ü
+    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.nuister.salon.vip.po
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    instance-id: api-res
+    prefer-ip-address: true
+
